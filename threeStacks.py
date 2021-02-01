@@ -37,3 +37,10 @@ class ManyStacks():
         self.validStackNumber(theStackNumber)
         offset = theStackNumber * self.stackSize
         return offset + self.sizes[theStackNumber]
+
+    def printStacks(self):
+        for stack in range(self.numberStacks):
+            firstIndex = self.topOfStackIndex(stack) - 1
+            lastIndex = firstIndex + self.sizes[stack]
+            stackEntries = self.array[firstIndex:lastIndex]
+            print("Stack {} :".format(stack), stackEntries)
